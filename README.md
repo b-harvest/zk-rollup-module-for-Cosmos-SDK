@@ -130,8 +130,8 @@ The gnark repository includes
 **Strong Motivation and Sustainable Management**
 
 - B-Harvest is one of the most devoted community member of Cosmos Network who believes Defi service with Hub-level security is crucial necessary condition to compete other Defi services outside Cosmos ecosystem
-- B-Harvest is implementing zk-rollup supported DeX zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many DeX related transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our DeX project.
-- zk-rollup supported DeX roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools
+- B-Harvest is implementing zk-rollup supported zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our project.
+- zk-rollup supported zone roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools
 - We have strong willingness to accept additional funding from ICF or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers
 
 **Skills and Man power**
@@ -223,8 +223,8 @@ The gnark repository includes
     - less demands on fast finality
 - Usecases of zk-rollup
     - more specific and concise computation
-    - perfect layer-1 security necessity : Defi, deposit significant assets to layer 2
-    - high demands on fast finality : Interchain utilities, trading, payment
+    - perfect layer-1 security necessity : utilities which need significant deposit of assets to layer 2
+    - high demands on fast finality : Interchain asset transfer with fast withdrawal from layer 2
 
 ## User Benefit / Ecosystem Impact
 
@@ -232,13 +232,13 @@ The gnark repository includes
 
 - zk-rollup provides the most efficient and secure scalability solution for the Cosmos Hub and other Cosmos blockchains
 
-**Strengthen Defi Competitiveness For Global Platform Competition**
+**Strengthen Utility Competitiveness For Global Platform Competition**
 
-- Especially, Defi application and pegzones will benefit strongly
+- Especially, pegzones and other utilities with heavy deposit activities will benefit strongly
     - Applications that users have to put significant asset into layer 2 will benefit from zk-rollup support by the Hub
     - Very short finality latency without no economic assumption : dynamic asset movement across connected blockchains
     - Does not have to possess strong layer 2 security
         - because the computation consistency is verified on layer 1 before confirmation
         - it can reduce the cost of layer 2 operation by minimizing native token economics and its incentives for delegators and validators
-- Defi service with Hub-level security
-    - Defi service with fast finality on the Hub, perfect Hub-level security, various interchain connectivity will greatly benefit the users so that the Hub can attract more Defi users from outside Cosmos Ecosystem, to possess enough competitiveness to become the mainstream Defi network for heterogenious blockchains
+- Scalable utilities with Hub-level security
+    - Scalable utilities with fast finality on the Hub, perfect Hub-level security, various interchain connectivity will greatly benefit the users so that the Hub can attract more users from outside Cosmos Ecosystem, to possess enough competitiveness to become the mainstream utility providers for heterogenious blockchains
