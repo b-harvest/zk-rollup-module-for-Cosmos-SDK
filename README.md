@@ -132,7 +132,7 @@ The gnark repository includes
 - B-Harvest is one of the most devoted community member of Cosmos Network who believes Defi service with Hub-level security is crucial necessary condition to compete other Defi services outside Cosmos ecosystem
 - B-Harvest is implementing zk-rollup supported zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our project.
 - zk-rollup supported zone roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools
-- We have strong willingness to accept additional funding from ICF or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers
+- We have strong willingness to accept additional funding from ICF, AiB or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers
 
 **Skills and Man power**
 
