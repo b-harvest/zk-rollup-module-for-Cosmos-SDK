@@ -60,54 +60,54 @@ The gnark repository includes
 - testcodes for each functionality provided
 - detail backend process
 
-    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cea9e71-5ac4-4dfd-a222-894aea5745cd/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cea9e71-5ac4-4dfd-a222-894aea5745cd/Untitled.png)
+    
 
     1) frontend : transaction broadcast
 
-    - user create transaction on frontend
-    - the transaction is broadcasted to L2 network
+        - user create transaction on frontend
+        - the transaction is broadcasted to L2 network
 
     2) L2 consensus : block commit with the transaction
 
-    - proposer includes the transaction in a block
-    - the block with the transaction is committed by L2 consensus
-    - suggested merkle tree change is stored
+        - proposer includes the transaction in a block
+        - the block with the transaction is committed by L2 consensus
+        - suggested merkle tree change is stored
 
     3) prover : read suggested merkle tree change on L2
 
     4) prover : calculate zk-proof
 
-    - prover finds new suggested **merkle tree change**
-    - **zk-prover** calculate **zk-proof** for the **merkle tree change** using predefined **circuit program**
+        - prover finds new suggested **merkle tree change**
+        - **zk-prover** calculate **zk-proof** for the **merkle tree change** using predefined **circuit program**
 
     5) prover : transaction broadcasting
 
-    - prover broadcasts zk-proof transaction
-    - including merkle tree change and its zk-proof
+        - prover broadcasts zk-proof transaction
+        - including merkle tree change and its zk-proof
 
     6) L2 consensus : block commit with the zk-proof
 
-    - proposer includes the zk-proof transaction in a block
-    - L2 consensus verifies the consistency of zk-proof
-    - the block with the zk-proof transaction is committed by L2 consensus
+        - proposer includes the zk-proof transaction in a block
+        - L2 consensus verifies the consistency of zk-proof
+        - the block with the zk-proof transaction is committed by L2 consensus
 
     7) IBC relayer : relays committed zk-proof from L2 to L1
 
     8) L1 consensus : verify zk-proof
 
-    - L1 consensus receives zk-proof relayed by IBC relayer
-    - L1 consensus verify the received zk-proof
+        - L1 consensus receives zk-proof relayed by IBC relayer
+        - L1 consensus verify the received zk-proof
 
     9) L1 consensus : update merkle tree
 
-    - L1 apply merkle tree change which is verified by zk-proof
-    - updated merkle tree is committed on L1
+        - L1 apply merkle tree change which is verified by zk-proof
+        - updated merkle tree is committed on L1
 
     10) IBC relayer : relays updated merkle tree from L1 to L2
 
     11) L2 consensus : update merkle tree
 
-    - L2 consensus updates merkle tree via relayed merkle tree from L1
+        - L2 consensus updates merkle tree via relayed merkle tree from L1
 
 **Frontend and Tools**
 
