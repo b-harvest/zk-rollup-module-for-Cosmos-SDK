@@ -25,7 +25,7 @@ There exists multiple toolkits for zk-SNARKs. To name a few,
 
 B-Harvest investigated many existing implementations and found out that the "gnark" implemented by Consensys is very concise, no library dependency, language compatible to Cosmos-SDK, performance optimized, and also providing relevant tools for simple usecase of zk-SNARKs and zk-rollup.
 
-To not re-invent the wheel, we will actively re-utilize many parts of gnark implementation to create entire zk-rollup package customized to Tendermint/Cosmos-SDK based blockchain usecase.
+Not to re-invent the wheel, we will actively re-utilize many parts of gnark implementation to create entire zk-rollup package customized to Tendermint/Cosmos-SDK based blockchain usecase.
 
 The gnark repository includes 
 
@@ -40,7 +40,7 @@ The gnark repository includes
 
 ## Range of Spec
 
-### Mileston 1 : Technology Package Delivery
+### Milestone 1 : Technology Package Delivery
 
 **Duration**
 
@@ -51,11 +51,63 @@ The gnark repository includes
 - zk-SNARKs tools for Cosmos ecosystem use-case
     - zk prover and verifier program
         - Groth16 implementation with default chosen elliptic curve and its pairing computation
-- Blockchain module
+- blockchain module
     - zk rollup module for the Hub
         - zk-proof verification and merkle tree management functionality
         - store current prover&verifier key
+    - zk proof module for the Zone
+        - zk-proof verification and merkle tree management functionality
 - testcodes for each functionality provided
+- detail backend process
+
+    ![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cea9e71-5ac4-4dfd-a222-894aea5745cd/Untitled.png](https://s3-us-west-2.amazonaws.com/secure.notion-static.com/9cea9e71-5ac4-4dfd-a222-894aea5745cd/Untitled.png)
+
+    1) frontend : transaction broadcast
+
+    - user create transaction on frontend
+    - the transaction is broadcasted to L2 network
+
+    2) L2 consensus : block commit with the transaction
+
+    - proposer includes the transaction in a block
+    - the block with the transaction is committed by L2 consensus
+    - suggested merkle tree change is stored
+
+    3) prover : read suggested merkle tree change on L2
+
+    4) prover : calculate zk-proof
+
+    - prover finds new suggested **merkle tree change**
+    - **zk-prover** calculate **zk-proof** for the **merkle tree change** using predefined **circuit program**
+
+    5) prover : transaction broadcasting
+
+    - prover broadcasts zk-proof transaction
+    - including merkle tree change and its zk-proof
+
+    6) L2 consensus : block commit with the zk-proof
+
+    - proposer includes the zk-proof transaction in a block
+    - L2 consensus verifies the consistency of zk-proof
+    - the block with the zk-proof transaction is committed by L2 consensus
+
+    7) IBC relayer : relays committed zk-proof from L2 to L1
+
+    8) L1 consensus : verify zk-proof
+
+    - L1 consensus receives zk-proof relayed by IBC relayer
+    - L1 consensus verify the received zk-proof
+
+    9) L1 consensus : update merkle tree
+
+    - L1 apply merkle tree change which is verified by zk-proof
+    - updated merkle tree is committed on L1
+
+    10) IBC relayer : relays updated merkle tree from L1 to L2
+
+    11) L2 consensus : update merkle tree
+
+    - L2 consensus updates merkle tree via relayed merkle tree from L1
 
 **Frontend and Tools**
 
@@ -99,6 +151,10 @@ The gnark repository includes
         - zk-proof verification and storage into kv-store
     - Basic web interface for monitoring and testing entire zk-rollup process
 
+**Audit(not confirmative)**
+
+- Entire Package Audit by gnark Author : [Gautam Botrel](https://github.com/gbotrel)
+
 **Documentation and Simulation Report**
 
 - Additional Documentations
@@ -130,9 +186,9 @@ The gnark repository includes
 **Strong Motivation and Sustainable Management**
 
 - B-Harvest is one of the most devoted community member of Cosmos Network who believes Defi service with Hub-level security is crucial necessary condition to compete other Defi services outside Cosmos ecosystem
-- B-Harvest is implementing zk-rollup supported zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our project.
-- zk-rollup supported zone roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools
-- We have strong willingness to accept additional funding from ICF, AiB or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers
+- B-Harvest is implementing zk-rollup supported DeX zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many DeX related transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our DeX project.
+- zk-rollup supported DeX roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools
+- We have strong willingness to accept additional funding from ICF or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers
 
 **Skills and Man power**
 
@@ -223,8 +279,8 @@ The gnark repository includes
     - less demands on fast finality
 - Usecases of zk-rollup
     - more specific and concise computation
-    - perfect layer-1 security necessity : utilities which need significant deposit of assets to layer 2
-    - high demands on fast finality : Interchain asset transfer with fast withdrawal from layer 2
+    - perfect layer-1 security necessity : Defi, deposit significant assets to layer 2
+    - high demands on fast finality : Interchain utilities, trading, payment
 
 ## User Benefit / Ecosystem Impact
 
@@ -232,13 +288,13 @@ The gnark repository includes
 
 - zk-rollup provides the most efficient and secure scalability solution for the Cosmos Hub and other Cosmos blockchains
 
-**Strengthen Utility Competitiveness For Global Platform Competition**
+**Strengthen Defi Competitiveness For Global Platform Competition**
 
-- Especially, pegzones and other utilities with heavy deposit activities will benefit strongly
+- Especially, Defi application and pegzones will benefit strongly
     - Applications that users have to put significant asset into layer 2 will benefit from zk-rollup support by the Hub
     - Very short finality latency without no economic assumption : dynamic asset movement across connected blockchains
     - Does not have to possess strong layer 2 security
         - because the computation consistency is verified on layer 1 before confirmation
         - it can reduce the cost of layer 2 operation by minimizing native token economics and its incentives for delegators and validators
-- Scalable utilities with Hub-level security
-    - Scalable utilities with fast finality on the Hub, perfect Hub-level security, various interchain connectivity will greatly benefit the users so that the Hub can attract more users from outside Cosmos Ecosystem, to possess enough competitiveness to become the mainstream utility providers for heterogenious blockchains
+- Defi service with Hub-level security
+    - Defi service with fast finality on the Hub, perfect Hub-level security, various interchain connectivity will greatly benefit the users so that the Hub can attract more Defi users from outside Cosmos Ecosystem, to possess enough competitiveness to become the mainstream Defi network for heterogenious blockchains
