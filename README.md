@@ -287,14 +287,5 @@ The gnark repository includes
 **Efficient and Secure Scalability Solution for Cosmos Ecosystem**
 
 - zk-rollup provides the most efficient and secure scalability solution for the Cosmos Hub and other Cosmos blockchains
-
-**Strengthen Defi Competitiveness For Global Platform Competition**
-
-- Especially, Defi application and pegzones will benefit strongly
-    - Applications that users have to put significant asset into layer 2 will benefit from zk-rollup support by the Hub
-    - Very short finality latency without no economic assumption : dynamic asset movement across connected blockchains
-    - Does not have to possess strong layer 2 security
-        - because the computation consistency is verified on layer 1 before confirmation
-        - it can reduce the cost of layer 2 operation by minimizing native token economics and its incentives for delegators and validators
-- Defi service with Hub-level security
-    - Defi service with fast finality on the Hub, perfect Hub-level security, various interchain connectivity will greatly benefit the users so that the Hub can attract more Defi users from outside Cosmos Ecosystem, to possess enough competitiveness to become the mainstream Defi network for heterogenious blockchains
+- zk-rollup does not require significant trust on validator sets of layer 2, which allows centralized layer 2 operation
+- centralized operation can minimize unnecessary incentive system for delegators and validators
