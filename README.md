@@ -2,6 +2,8 @@
 
 This repository is for explaining objectives and technical description of how B-Harvest will implement zk-rollup module for Cosmos-SDK
 
+<br/>
+
 ## Short Summary
 
 zk-rollup methodology utilizing zk-SNARKs provide an efficient way to scale out from the Cosmos Hub (the Hub = Layer 1 = L1) to an application specific Cosmos Zone (a Zone = Layer 2 = L2) without sacrificing the security of the Hub.
@@ -9,6 +11,8 @@ zk-rollup methodology utilizing zk-SNARKs provide an efficient way to scale out 
 In order to give the Hub ability to support any governance-allowed Zone with zk-rollup security enhancement, the Hub should adopt a generalized zk-rollup module which will provide zk-proof verification and merkle tree management functionality.
 
 In this project, B-Harvest will provide "full zk-rollup package" to provide the community full development cycle to adopt additional zk-rollup supported Zone.
+
+<br/>
 
 ## Background Technology
 
@@ -38,9 +42,15 @@ The gnark repository includes
     - necessary circuit gadgets for elliptic curves and merkle tree hashing
     - pseudo zk-SNARKs setup script to output prover&verifier key
 
+<br/>
+
 ## Range of Spec
 
+<br/>
+
 ### Milestone 1 : Technology Package Delivery
+
+<br/>
 
 **Duration**
 
@@ -125,7 +135,11 @@ The gnark repository includes
 - Various community engagement regarding spreading out benefits of zk-rollup on the Hub
 - Related governance leadership to include zk-rollup module on the Hub
 
+<br/>
+
 ### Milestone 2 : Governance Process and Production Support
+
+<br/>
 
 **Duration**
 
@@ -164,6 +178,8 @@ The gnark repository includes
     - Performance zk-rollup test result with default vanilla Zone
         - prover&verifier performance with thousands of transaction in a block
 
+<br/>
+
 ### Further Roadmap not Included in this Funding Project
 
 - Privacy-preserving Zone with zk-rollup support from the Hub
@@ -172,6 +188,8 @@ The gnark repository includes
     - Adopting alternative elliptic curves
     - Adopting alternative zk-SNARKs methodology
 - Support signature verification functionality for multiple additional elliptic curves
+
+<br/>
 
 ## Team Due Diligence / Track Record
 
@@ -214,6 +232,8 @@ The gnark repository includes
 - Open source
     - The repository on github will be open source from begining
 
+<br/>
+
 ## Budget
 
 **Man power**
@@ -239,6 +259,8 @@ The gnark repository includes
     - Duration : 3 months
     - Budget : 3 months * $30K = $90K
 - Total budget : $215K + $90K = $305K
+
+<br/>
 
 ## Rollup Comparison : Optimistic Rollup
 
@@ -281,6 +303,8 @@ The gnark repository includes
     - more specific and concise computation
     - perfect layer-1 security necessity : Defi, deposit significant assets to layer 2
     - high demands on fast finality : Interchain utilities, trading, payment
+
+<br/>
 
 ## User Benefit / Ecosystem Impact
 
