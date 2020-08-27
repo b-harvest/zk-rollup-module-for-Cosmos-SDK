@@ -203,10 +203,9 @@ The gnark repository includes
 
 **Strong Motivation and Sustainable Management**
 
-- B-Harvest is one of the most devoted community member of Cosmos Network who believes Defi service with Hub-level security is crucial necessary condition to compete other Defi services outside Cosmos ecosystem
-- B-Harvest is implementing zk-rollup supported DeX zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many DeX related transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our DeX project.
-- zk-rollup supported DeX roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools
-- We have strong willingness to accept additional funding from ICF or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers
+- B-Harvest will implement zk-rollup supported Cosmos zone which will provide superior performance to users without sacrificing Hub-level security or congestion of the Hub with many related transactions. For this roadmap, generalized zk-rollup functionality of the Hub is the most crucial step. So, we are not only motivated but we naturally have strong incentives to provide zk-rollup module with best quality for our project.
+- zk-rollup supported Cosmos zone roadmap also gives us synergetic reasons why we want to keep managing and improving the zk-rollup package. We hope to keep spreading the advantages of zk-rollup technology in Cosmos ecosystem and become a helpful guide to introduce and provide the functionality and tools.
+- We have strong willingness to accept additional funding from ICF or community fund to extend our contribution to zk-rollup package by implementing further roadmap topics so that our module can keep track with global zk-rollup frontiers.
 
 **Skills and Man power**
 
@@ -301,8 +300,8 @@ The gnark repository includes
     - less demands on fast finality
 - Usecases of zk-rollup
     - more specific and concise computation
-    - perfect layer-1 security necessity : Defi, deposit significant assets to layer 2
-    - high demands on fast finality : Interchain utilities, trading, payment
+    - perfect layer-1 security necessity : utilities with significant deposit assets to layer 2
+    - high demands on fast finality : interchain utilities with transactions from different blockchains
 
 <br/>
 
